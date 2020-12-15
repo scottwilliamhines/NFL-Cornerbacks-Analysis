@@ -36,23 +36,3 @@ def create_position_group_df(lst, position_group):
                   .reset_index(level = ['gameId', 'playId', 'nflId', 'displayName'])
       week_empty = pd.concat([week_empty,week], join= 'inner')
   return week_empty
-
-def create_sns_distplot(data, title, x_label, y_label):
-    """Labels an sns.distplot
-
-    Args:
-    data (pd.series or lst): [An array of data to plot or an array of pd.series or lists to plot on top of each other]
-    title ([string]): [Intended title of the plot]
-    x_label ([String]): [Intended label for the X-axis]
-    y_label ([String]): [Intended label for the Y-axis]
-    """
-    ax = sns.distplot(data, kde =True)
-    ax.set_xlabel(x_label)
-    ax.set_ylabel(y_label)
-    ax.set_title(title)
-    return plt.show()
-
-if __name__ == '__main__':
-    data1 = np.random.randint(0 , 100, size = 100)
-    data2 = np.random.randint(0 , 100, size = 100)
-    create_sns_distplot(data1, 'Test Plot', 'data', 'density')
