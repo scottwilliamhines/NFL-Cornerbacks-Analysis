@@ -50,9 +50,53 @@ def create_sns_distplot(data, title, x_label, y_label):
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
     ax.set_title(title)
+    plt.savefig("../img/{}".format('{}.png'.format(title)), dpi = 300)
+    return plt.show()
+
+def create_stats_plots(data1, data2, title, x_label, y_label, data1_legend_label, data2_legend_label):
+    """Creates overlayed KDE distribution plots of 2 series of data.
+
+    Args:
+        data1 (pd.series or list): [An array of data to plot or an array of pd.series or lists to plot on top of each other]
+        data2 (pd.series or list): [An array of data to plot or an array of pd.series or lists to plot on top of each other]
+        title ([string]): [Intended title of the plot]
+        x_label ([String]): [Intended label for the X-axis]
+        y_label ([String]): [Intended label for the Y-axis]
+        data1_label (String): [In]
+    """
+    ax = sns.distplot(data1, kde =True, label= data1_legend_label)
+    sns.distplot(data2, kde =True, label = data2_legend_label)
+    ax.set_xlabel(x_label)
+    ax.set_ylabel(y_label)
+    ax.set_title(title)
+    ax.legend()
+    plt.savefig("../img/{}".format('{}.png'.format(title)), dpi = 300)
+    return plt.show()
+
+def create_sns_scatter(df, x_data, y_data, title, x_label, y_label):
+    """Create a Seaborn Scatter Plot.
+
+    Args:
+        dataset ([pd.DataFrame]): A dataframe containing the dataset
+        x_data (pd.Series): One of the columns of the dataframe to plot on the x axis
+        y_data (pd.Series): A column of data from the dataframe to plot in relation to the x_data on the y_axis
+        title (String): Plot title
+        x_label (String): X axis label
+        y_label (String): Y axis label
+    """
+    ax = sns.scatterplot(x = x_data, y = y_data, data = df, hue = x_data, legend =  False)
+    ax.set_xlabel(x_label)
+    ax.set_ylabel(y_label)
+    ax.set_title(title)
+    plt.savefig("../img/{}".format('{}.png'.format(title)), dpi = 300)
     return plt.show()
 
 if __name__ == '__main__':
     data1 = np.random.randint(0 , 100, size = 100)
     data2 = np.random.randint(0 , 100, size = 100)
+    df = pd.DataFrame({'col1': [1,4,2,5,7,4,12,34,23,19,4,5,6,7,5,5,6,8,7],
+                        'col2': [3,6,3,6,5,7,5,4,4,3,3,6,7,6,5,5,7,8,7]
+    })
     create_sns_distplot(data1, 'Test Plot', 'data', 'density')
+    create_stats_plots(data1, data2, 'Test Plot', 'data', 'density', 'data1', 'data2')
+    create_sns_scatter(df,'col1','col2', 'Test Plot', 'Column 1', 'Column 2')
