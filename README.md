@@ -35,7 +35,7 @@ Next I had to combine EPA and playResult data and link it to all of the playId's
 
 Finally I created a playCount column by summing the number of data points present indexed by GameId and PlayId for each player so that I could identify the number of plays that each player took part in throughout the season. I joined this on the aggregated data mentioned above to create a final dataframe that I could work with.
 
-![alt text]()
+![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/FInal%20Cornerback%20DataFrame%20example.png)
 
 
 
