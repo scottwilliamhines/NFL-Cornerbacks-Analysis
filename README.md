@@ -8,7 +8,7 @@ NFL Cornerback: What Statistics Have an Effect on EPA
 A Cornerbacks main role on an NFL defense is to protect against plays going to the pass catchers on the offense. Though it is not a hard and fast rule, this usually means that they are tracking the wide receivers. We know that in 2017 the NFL offenses operated with 1 Running Back, 1 Tight End, and 3 Wide Receivers 71.29% of the time. The ball can be passed to any of these positions, but most often it is going to the Wide Receivers. So the cornerbacks job is to track that wide receiver well enough to be able to keep the ball out of their hands if the pass comes their way. 
 
 ![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Cornerback%20example.gif)
-Image source: [Pro Football Focus](https://www.pff.com/news/nfl-highest-graded-man-coverage-cornerbacks-in-2019-marcus-peters-and-marlon-humphrey-baltimore-ravens)
+- Image source: [Pro Football Focus](https://www.pff.com/news/nfl-highest-graded-man-coverage-cornerbacks-in-2019-marcus-peters-and-marlon-humphrey-baltimore-ravens)
 
 
 **EPA (Expected Points Added)**
