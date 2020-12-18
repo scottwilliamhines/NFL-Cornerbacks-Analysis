@@ -15,7 +15,11 @@ A Cornerbacks main role on an NFL defense is to protect against plays going to t
 Expected points added on the play, relative to the offensive team. Expected points is a metric that estimates the average of every next scoring outcome given the play's down, distance, yardline, and time remaining (numeric). Within this dataset what we are seeing is a change in EPA on each particular play. Offenses want a higher number here because it shows that they made progress towards a higher probability of scoring points. Defenses and defensive players on the otherhand will want this number to be low or negative as that indicates they successfully limited the increase in probability of points or even decreased that probability. I will be averaging this metric out per Cornerback and per play, so in our final dataset the numbers we are seeing represent an Average change in EPA per passing play that each cornerback acheived on the 2017 season. 
 
 ### Can speed predict success of NFL Cornerbacks against the pass?
-In recent years NFL offenses have become faster and have been scoring more points. There is some speculation that the increased points are in part due to NFL rule changes that benefit the passing game. In the past, sending a wide receiver across the middle of the field would innevitably result in that player ending up on the ground whether they were the recipient of the pass or not. Defenses could run buckshot from sideline to sideline and most collisions were seen as part of the game. That is no longer the case. There are extensive rules about who can get hit and how and where you can hit them now. There are also some strict rules about how a pass can be defensed. If a defender doesn't do everything right fans of the game will see a yellow penalty flag on the field and most likely result in Pass Interference. Pass interference is inforced at the spot of the foul, which often results in 30 yards or more in penalty yardage and makes it the most costly penalty in the game.  For these reasons and more teams seem to be focusing less on winning at the line of scrimmage with size and strength and instead they are getting off the line of scrimmage with speed and are throwing the ball more often. That brings us to my main question going into this project. Can the average speed of NFL Cornerbacks defending these fast wide receivers be a predictor for their success on passing plays?
+In recent years NFL offenses have become faster and have been scoring more points. There is some speculation that the increased points are in part due to NFL rule changes that benefit the passing game. In the past, sending a wide receiver across the middle of the field would innevitably result in that player ending up on the ground whether they were the recipient of the pass or not. Defenses could run buckshot from sideline to sideline and most collisions were seen as part of the game. That is no longer the case. There are extensive rules about who can get hit and how and where you can hit them now. There are also some strict rules about how a pass can be defensed. If a defender doesn't do everything right fans of the game will see a yellow penalty flag on the field and most likely result in Pass Interference. Pass interference is inforced at the spot of the foul, which often results in 30 yards or more in penalty yardage and makes it the most costly penalty in the game.  For these reasons and more teams seem to be focusing less on winning at the line of scrimmage with size and strength and instead they are getting off the line of scrimmage with speed and are throwing the ball more often. That brings us to my main question going into this project. Can the average speed of NFL Cornerbacks defending these fast wide receivers be a predictor for their success on passing plays? With that in mind I came up with this hypothesis test:
+
+##### $h_0$ : There is no difference in EPA between the bottom 25% slowest CB's and the top 25% fastest CB's 
+##### $h_a$: The top 25% fastest CB's will have a lower average EPA. 
+
 
 ### The Data
 To answer this question I found a dataset on Kaggle of data from 2017. It consisted of four types of CSV files.
@@ -37,5 +41,24 @@ Finally I created a playCount column by summing the number of data points presen
 
 ![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/FInal%20Cornerback%20DataFrame%20example.png)
 
+### What the Data is Telling Me
 
+As mentioned above I am working with the following Null and alternate hypothesis test.
+
+##### $h_0$ : The top 25% fastest CB's will have no difference in average EPA
+##### $h_a$: The top 25% fastest CB's will have a lower average EPA. 
+
+I tested the top 25% of Cornerbacks by average speed per play in yards/second against the bottom 25% of corner backs in that same space. I used a MannwhitneyU test and got a P-value of 0.8346076309665449. Given that my alpha for this test was .05, I definitely do not have enough evidence to reject my null hypothesis.
+
+Looking at these two distibutions we can see that this p_value result makes sense.
+
+![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Distribution%20of%20Average%20EPA:%20Cornerbacks.png)
+
+Frankly I was a bit surprised to see this result, so I started to investigate a little deeper. 
+
+If we look at a plot of all the Average speeds vs. all of the the Average EPA per play you can see that this is very spread out. 
+
+![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Corner%20Back%20Average%20Speed%20Vs.%20Average%20EPA.png)
+
+So this also ultimately supports our final conclusion that we cannot reject the null. So what is possibly going on here?
 
