@@ -47,8 +47,8 @@ Finally I created a playCount column by summing the number of data points presen
 
 As mentioned above I am working with the following Null and alternate hypothesis test.
 
-##### $h_0$ : The top 25% fastest CB's will have no difference in average EPA
-##### $h_a$: The top 25% fastest CB's will have a lower average EPA. 
+##### Null Hypothesis : The top 25% fastest CB's will have no difference in average EPA
+##### Alternative Hypothesis: The top 25% fastest CB's will have a lower average EPA. 
 
 I tested the top 25% of Cornerbacks by average speed per play in yards/second against the bottom 25% of corner backs in that same space. I used a MannwhitneyU test and got a P-value of 0.8346076309665449. Given that my alpha for this test was .05, I definitely do not have enough evidence to reject my null hypothesis.
 
@@ -74,13 +74,17 @@ So this also ultimately supports our final conclusion that we cannot reject the 
 
 I have found through analysis of this data that Average speed per play is not an appropriate metric for determining a cornerbacks success against the pass. There are a couple of things that we can look at here that might explain why. 
 
-1. Cornerbacks are often at their fastest when they are trying to make up for a bad play. 
+---
+
+Cornerbacks are often at their fastest when they are trying to make up for a bad play. 
 
 ![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Corner%20back%20is%20beat.gif)
 
-You can see in the video above that the Cornerback is beat around the edge and then has to put in a great effort of speed and accelerattion to catch up. Every cornerback will get beat every once in a while, but the bad cornerbacks who get beat often will have to make up for this with the speed to catch up to their opponent.
+- You can see in the video above that the Cornerback is beat around the edge and then has to put in a great effort of speed and accelerattion to catch up. Every cornerback will get beat every once in a while, but the bad cornerbacks who get beat often will have to make up for this with the speed to catch up to their opponent.
 
-2. There are many occasions where the Cornerback will be playing off the defender or in zone defense and average speed on that play is going to be much less of a factor. In these situation peak speed and/or peak acceleration may be a good metric, but average speed much less so. The reason is that the defender waits inside of a zone for a skill player who is attacking that part of the field. The act of moving in this situation happens much more quickly as opposed to following a receiver of the line and tracking their steps throughout. 
+---
+
+There are many occasions where the Cornerback will be playing off the defender or in zone defense and average speed on that play is going to be much less of a factor. In these situation peak speed and/or peak acceleration may be a good metric, but average speed much less so. The reason is that the defender waits inside of a zone for a skill player who is attacking that part of the field. The act of moving in this situation happens much more quickly as opposed to following a receiver of the line and tracking their steps throughout. 
 
 Zone coverage:
 
