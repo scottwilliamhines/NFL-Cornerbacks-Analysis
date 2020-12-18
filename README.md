@@ -35,11 +35,13 @@ For more information about each dataset please see the column descriptions here:
 
 ### The Method
 
-In order to answer my question I had to aggregate the information in all of these datasets down to my target metrics. Within the game, play and weekly tracking data there were unique gameId identifiers for each game. Within the tracking data and the play data each gameId had multiple unique playId's. Finally within the tracking data for each player per week there were frameId which split the players position, speed, acceleration, etc. into 59 frames per play. I took the mean per play of the speed and acceleration columns across all 17 weeks and combined that with the players vital information from the players dataset.
+In order to answer my question I had to aggregate the information in all of these datasets down to my target metrics. Within the game, play and weekly tracking data there were unique gameId identifiers for each game. Within the tracking data and the play data each gameId had multiple unique playIds. Finally within the tracking data for each player per week there were frameIds which split the players position, speed, acceleration, etc. into 59 frames per play. I took the mean per play of the speed and acceleration columns across all 17 weeks and combined that with the players vital information from the players dataset.
 
-Next I had to combine EPA and playResult data and link it to all of the playId's. I wanted my final dataframe to only include information about passing plays because I am only interested in defending agaist the pass. For that reason, I only pulled EPA data from passing plays. This way when I joined this back on my working dataframe I could remove all rows that had NAN values in EPA. The logic here is that because I only pulled EPA from playId's that were passing plays in the original datset, I could deduce that any other row  with a playId that included NAN in the EPA column was a run play. 
+Next I had to combine EPA and playResult data and link it to all of the playId's. I wanted my final dataframe to only include information about passing plays because I am only interested in defending agaist the pass. For that reason, I only pulled EPA data from passing plays. This way when I joined this back on my working dataframe I could remove all rows that had NAN values in EPA. The logic here is that because I only pulled EPA from playId's that were passing plays in the original datset, I could deduce that any other row  with a playId that included NAN in the EPA column was a run play (or at least not a passing play). 
 
 Finally I created a playCount column by summing the number of data points present indexed by GameId and PlayId for each player so that I could identify the number of plays that each player took part in throughout the season. I joined this on the aggregated data mentioned above to create a final dataframe that I could work with.
+
+Quick note: a cornerback may play 30 to 50 passing plays a game and only need to defend less than 10 passes that come their way. I still think that taking average speed on every passing play is avalid here, because their presence on the field and ability to closely track the offensive player to whom they are assigned has an effect on the outcome of the play. 
 
 ![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/FInal%20Cornerback%20DataFrame%20example.png)
 
@@ -58,11 +60,11 @@ Looking at these two distibutions we can see that this p_value result makes sens
 
 Frankly I was a bit surprised to see this result, so I started to investigate a little deeper. 
 
-If we look at a plot of all the Average speeds vs. all of the the Average EPA per play you can see that this is very spread out. 
+If we look at a plot of all the Average speeds vs. all of the the Average EPA per play you can see that there is not much of a noticeable trend. 
 
 ![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Corner%20Back%20Average%20Speed%20Vs.%20Average%20EPA.png)
 
-We can also see here that the top ranked Cornerbacks by Pro Football Focus from the 2017 season vary in where they land on either side of the mean of Average speed per play. Some of them are quite a bit slower than their peer by that metric. 
+We can also see here that the top ranked Cornerbacks by Pro Football Focus from the 2017 season vary in where they land on either side of the mean of Average speed per play. Some of them are quite a bit slower than their peer by that metric, but are still considered the top players at their position by a credible source. 
 
 ![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Top%20CB%20Against%20the%20Average%20Speed.png)
 
@@ -84,19 +86,19 @@ Cornerbacks are often at their fastest when they are trying to make up for a bad
 
 ---
 
-There are many occasions where the Cornerback will be playing off the defender or in zone defense and average speed on that play is going to be much less of a factor. In these situation peak speed and/or peak acceleration may be a good metric, but average speed much less so. The reason is that the defender waits inside of a zone for a skill player who is attacking that part of the field. The act of moving in this situation happens much more quickly as opposed to following a receiver of the line and tracking their steps throughout. 
+There are many occasions where the Cornerback will be playing off the defender or in zone defense and average speed on that play is going to be much less of a factor. In these situations peak speed and/or peak acceleration may be a good metric, but average speed much less so. The reason is that the defender waits inside of a zone for a skill player who is attacking that part of the field. The act of moving in this situation happens much more quickly as opposed to following a receiver off the line and tracking their steps throughout. See below for examples of zone coverage verses man coverage and how that might effect average speed on a play.
 
-Zone coverage:
+**Zone coverage:**
 
 ![alt link](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Zone%20Defense.gif)
 
 - You can see in the video above that the Cornerbacks move very little at the beginning of the play, but instead wait for that play to develop in front of them and try to read the Quarterback. Then if anyone in their zone looks to be the recipient of the pass, then they move on them quickly. 
 
-Man Coverage:
+**Man Coverage:**
 
 ![alt link](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Man%20coverage.gif)
 
-- In man coverage the job of a corner looks much different. They are need to be in the back pocket of the wide receiver and will usually have a higher average speed on the play. 
+- In man coverage the job of a corner looks much different. They need to be in the back pocket of the wide receiver and will usually have a higher average speed on these types of plays. 
 
 ---
 
@@ -111,7 +113,7 @@ For this I used a very similar hypothesis test as I used with the Cornerbacks. I
 
 The MannWhitneyU Test on this data rendered a p_value of 0.8061234363912294.
 
-So again we are seeing that we do not have significant evidence to reject our null hypothesis that faster wide receivers will have a higher average EPA per play. 
+So again we are seeing that we do not have significant evidence to reject our null hypothesis that faster wide receivers by average speed per play will have a higher average EPA per play. 
 
 The distributions of this data support that P_value. 
 
