@@ -104,5 +104,44 @@ Man Coverage:
 
 If speed is not a good metric for measuring a Cornerbacks success against the pass, then could it be a good metric for determining a Wide Receivers success against the defender?
 
-For this I used a very similar hypothesis test as I used with the Cornerbacks. I also had to aggregate the dat in the same way. 
+For this I used a very similar hypothesis test as I used with the Cornerbacks. I also had to aggregate the data in the same way. 
 
+##### Null Hypothesis : The top 25% fastest WR's will have no difference in average EPA
+##### Alternative Hypothesis: The top 25% fastest WR's will have a higher average EPA.
+
+The MannWhitneyU Test on this data rendered a p_value of 0.8061234363912294.
+
+So again we are seeing that we do not have significant evidence to reject our null hypothesis that faster wide receivers will have a higher average EPA per play. 
+
+The distributions of this data support that P_value. 
+
+![alt link](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Distribution%20of%20Average%20EPA:%20Cornerbacks.png)
+
+You can also see from the scatter plot of this data that there is no real noticable trend in the data. 
+
+![alt link](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Wide%20Receiver%20Average%20Speed%20Vs.%20Average%20EPA.png)
+
+Ultimately I am just not seeing that average speed per play makes any real difference on average EPA for either cornerbacks or wide receivers. 
+
+### One noticable Trend Given the Avg Speed/play metric
+
+One thing that I was able to glean from this data is that on average wide receivers in the NFL are significantly faster on a per play basis than the Cornerback group. This was somewhat surprising to see given that the two groups so closely track each other throughout the game.
+
+You can see in this visual that wide receivers average speed per play are distributed almost entirely above the distribution for our Cornerbacks. 
+
+![alt link](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Distribution%20of%20Avg%20Speed%20per%20Play:%20CB%20VS%20WR.png)
+
+Our cornerback group is coming in with a mean of 3.0351156348966084 yards/second on the season and our wide receiver group is coming in with a mean of 3.653730562829387 yards/second on the season. 
+
+Bootstrapping gives us the following margins of error for the above means: 
+
+- margin_of_error for NFL Corner Backs Avg Speed/play in Yards/sec: 0.0252
+- margin_of_error for NFL Wide Receivers Avg Speed/play in Yards/sec: 0.0435
+
+Given what I am seeing here I feel confident in stating that wide receivers have a higher average speed per play than Cornerbacks. 
+
+One possible reason for this was actually mentioned above. Depending on what type of defense the team is employing (I.E. man coverage or zone coverage) the cornerbacks may be stationary for a short period of time at the beginning of the play as they wait for the play to develop. This is rarely the case for the wide receiver group. They are quickly going to get in position to make a play on every play. This would cause them to more frequently use their full speed throughout a game. 
+
+### Further Research Goals
+
+For further study of this dataset I would like to see if targeting minimum distances might be a good measure of success. This dataset has a large amount of positional data and if I could minimize the euclidean distance between two target subjects (say the cornerback and their target receiver) could that be a solid metric for success. Would the cornerback with the smallest average distance from their target subject be more successfull against the pass? I could also expand on this and look at team defense. Would the team who has the smallest sum of average distances bewteen the players on that defense and the ball throughout a season be more successfull than others?
