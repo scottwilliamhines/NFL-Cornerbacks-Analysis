@@ -91,8 +91,9 @@ Zone coverage:
 ![alt link](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Zone%20Defense.gif)
 
 Man Coverage:
+
 ![alt link](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Man%20coverage.gif)
 
-
+---
 
 
