@@ -60,5 +60,33 @@ If we look at a plot of all the Average speeds vs. all of the the Average EPA pe
 
 ![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Corner%20Back%20Average%20Speed%20Vs.%20Average%20EPA.png)
 
+We can also see here that the top ranked Cornerbacks by Pro Football Focus from the 2017 season vary in where they land on either side of the mean of Average speed per play. Some of them are quite a bit slower than their peer by that metric. 
+
+![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Top%20CB%20Against%20the%20Average%20Speed.png)
+
+Source for Top Ten list: [Pro Football Focus: NFL Top 15 Cornerbacks](https://www.pff.com/news/pro-hayward-ramsey-headline-the-nfls-top-cornerbacks-heading-into-2018)
+
 So this also ultimately supports our final conclusion that we cannot reject the null. So what is possibly going on here?
+
+### Putting our Data into Context
+
+I have found through analysis of this data that Average speed per play is not an appropriate metric for determining a cornerbacks success against the pass. There are a couple of things that we can look at here that might explain why. 
+
+1. Cornerbacks are often at their fastest when they are trying to make up for a bad play. 
+
+![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Corner%20back%20is%20beat.gif)
+
+You can see in the video above that the Cornerback is beat around the edge and then has to put in a great effort of speed and accelerattion to catch up. Every cornerback will get beat every once in a while, but the bad cornerbacks who get beat often will have to make up for this with the speed to catch up to their opponent.
+
+2. There are many occasions where the Cornerback will be playing off the defender or in zone defense and average speed on that play is going to be much less of a factor. In these situation peak speed and/or peak acceleration may be a good metric, but average speed much less so. The reason is that the defender waits inside of a zone for a skill player who is attacking that part of the field. The act of moving in this situation happens much more quickly as opposed to following a receiver of the line and tracking their steps throughout. 
+
+Zone coverage:
+
+![alt link](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Zone%20Defense.gif)
+
+Man Coverage:
+![alt link](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Man%20coverage.gif)
+
+
+
 
