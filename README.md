@@ -80,7 +80,7 @@ Cornerbacks are often at their fastest when they are trying to make up for a bad
 
 ![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Corner%20back%20is%20beat.gif)
 
-- You can see in the video above that the Cornerback is beat around the edge and then has to put in a great effort of speed and accelerattion to catch up. Every cornerback will get beat every once in a while, but the bad cornerbacks who get beat often will have to make up for this with the speed to catch up to their opponent.
+- You can see in the video above that the Cornerback is beat around the edge and then has to put in a great effort of speed and acceleration to catch up. Every cornerback will get beat every once in a while, but the bad cornerbacks who get beat often will have to make up for this with speed to catch up to their opponent.
 
 ---
 
@@ -90,10 +90,19 @@ Zone coverage:
 
 ![alt link](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Zone%20Defense.gif)
 
+- You can see in the video above that the Cornerbacks move very little at the beginning of the play, but instead wait for that play to develop in front of them and try to read the Quarterback. Then if anyone in their zone looks to be the recipient of the pass, then they move on them quickly. 
+
 Man Coverage:
 
 ![alt link](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Man%20coverage.gif)
 
+- In man coverage the job of a corner looks much different. They are need to be in the back pocket of the wide receiver and will usually have a higher average speed on the play. 
+
 ---
 
+### So What about the Opposition?
+
+If speed is not a good metric for measuring a Cornerbacks success against the pass, then could it be a good metric for determining a Wide Receivers success against the defender?
+
+For this I used a very similar hypothesis test as I used with the Cornerbacks. I also had to aggregate the dat in the same way. 
 
