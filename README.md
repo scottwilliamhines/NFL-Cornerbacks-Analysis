@@ -14,7 +14,7 @@ A Cornerbacks main role on an NFL defense is to protect against plays going to t
 **EPA (Expected Points Added)**
 Expected points added on the play, relative to the offensive team. Expected points is a metric that estimates the average of every next scoring outcome given the play's down, distance, yardline, and time remaining (numeric). Within this dataset what we are seeing is a change in EPA on each particular play. Offenses want a higher number here because it shows that they made progress towards a higher probability of scoring points. Defenses and defensive players on the otherhand will want this number to be low or negative as that indicates they successfully limited the increase in probability of points or even decreased that probability. I will be averaging this metric out per Cornerback and per play, so in our final dataset the numbers we are seeing represent an Average change in EPA per passing play that each cornerback acheived on the 2017 season. 
 
-![alt text]()
+![alt text](https://github.com/scottwilliamhines/NFL-Cornerbacks-Analysis/blob/main/img/Expected%20Points%20Added.png)
 
 Image source: [Advanced Football Analytics](https://www.advancedfootballanalytics.com/index.php/home/stats/stats-explained/expected-points-and-epa-explained)
 
